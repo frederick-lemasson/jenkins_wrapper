@@ -2,14 +2,20 @@ Simple script for wrapping external Jenkins jobs and sending their output to Jen
 
 Best used for cron jobs.
 
-This script originated here:  http://blog.markfeeney.com/2010/01/Hudson-external-jobs-wrapper-script.html
+
+- Full HTTP (no java required - curl tool required) 
+- Jenkins Jobs updated if existent or created if not existent
+
+
+This script originated here :  http://blog.markfeeney.com/2010/01/Hudson-external-jobs-wrapper-script.html
+and then here : http://github.com/joemiller/hudson_wrapper
 
 Examples:
    $ Jenkins_wrapper testjob /path/to/script.sh
    $ Jenkins_wrapper testjob 'sleep 2 && ls -la'
 
-	 # Windows powershell wrapper
-	 # Exemple : D:\bin\jen_wrap.ps1 Compress_log_IIS D:\scripts\system\ZipLogs.vbs
+   # Windows powershell wrapper
+   # Exemple : D:\bin\jen_wrap.ps1 Compress_log_IIS D:\scripts\system\ZipLogs.vbs
 	 
 	 In Task Scheduler : 
 	            set program to : powershell
