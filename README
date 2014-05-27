@@ -4,20 +4,13 @@ Best used for cron jobs.
 
 This script originated here:  http://blog.markfeeney.com/2010/01/Hudson-external-jobs-wrapper-script.html
 
-I added a few simple features:
-
-  1) If a job doesn't exist in Jenkins, it will automatically be created.
-     
-  2) Job names with whitespace are now supported (eg: "My Job #1")
-
-  3) Supports authenticating to Jenkins instances that require it
-     - Set CURL_AUTH_OPTS environment variable, or hardcode into the script (see example in the script)
-     - Be aware that this isn't the securest method, since your password could be read by someone on
-       the same machine by examining the environment or looking at the script itself.
-
 Examples:
    $ Jenkins_wrapper testjob /path/to/script.sh
    $ Jenkins_wrapper testjob 'sleep 2 && ls -la'
 
-
-
+	 # Windows powershell wrapper
+	 # Exemple : D:\bin\jen_wrap.ps1 Compress_log_IIS D:\scripts\system\ZipLogs.vbs
+	 
+	 In Task Scheduler : 
+	            set program to : powershell
+	            and arguments to : D:\bin\jen_wrap.ps1 Compress_log_IIS D:\scripts\system\ZipLogs.vbs
